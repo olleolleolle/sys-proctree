@@ -21,4 +21,9 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
 
   s.add_dependency "sys-proctable", "~> 0.9.2"
+
+  s.add_development_dependency "rspec", "~> 2.12"
+  s.add_development_dependency "cover_me", "~> 1.2.0"
+  s.add_development_dependency "flog", "~> 3.2.2"
+  s.add_development_dependency "travis-lint", "~> 1.6.0"
 end
