@@ -11,7 +11,9 @@ Guide
 ```ruby
     require 'sys/proctree'
 
-    ::Process.kill_tree(9, 2134) # Kills process with pid 2134 and it's children using 9 as the kill signal for each process
+    ::Sys::ProcTree.find(2134) # Returns an array containing pids of the process tree whose root has pid 2134, children first
+
+    ::Process.kill_tree(9, 2134) # Kills all processes in the tree of pid 2134 using kill signal 9
 ```
 
 Dependencies
