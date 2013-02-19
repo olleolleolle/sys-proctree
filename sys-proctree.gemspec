@@ -18,10 +18,12 @@ Gem::Specification.new do |s|
   s.test_files   = Dir.glob("./spec/**/*")
   s.require_path = "lib"
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = ">= 1.9.3"
 
   s.add_dependency "sys-proctable", "~> 0.9.2"
 
+  s.add_development_dependency "os", "~> 0.9.6"
+  s.add_development_dependency "rake", "~> 10.0.3"
   s.add_development_dependency "rspec", "~> 2.12"
   s.add_development_dependency "cover_me", "~> 1.2.0"
   s.add_development_dependency "flog", "~> 3.2.2"
