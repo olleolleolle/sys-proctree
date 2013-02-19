@@ -43,6 +43,6 @@ DEPENDENCIES
   flog (~> 3.2.2)
   os (~> 0.9.6)
   rspec (~> 2.12)
-  sys-proctable (~> 0.9.2)
+  sys-proctable
   sys-proctree!
   travis-lint (~> 1.6.0)

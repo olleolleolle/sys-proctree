@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'sys-proctable', '~> 0.9.2', require: 'sys/proctable'
+gem 'sys-proctable', require: 'sys/proctable'
 
 gemspec
 
