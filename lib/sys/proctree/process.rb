@@ -3,13 +3,13 @@ module Sys
 
     module Process
 
-      def kill_tree(pid)
+      def kill_tree(signal, pid)
         pids = ::Sys::ProcTree::Tree.find(pid)
         pids.collect do |pid|
           begin
-            ::Process.kill(9, pid)
+            ::Process.kill(signal, pid)
             ::Process.wait(pid)
-          rescue => exc
+          rescue
             [pid, nil]
           end
         end

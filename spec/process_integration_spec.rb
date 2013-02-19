@@ -11,7 +11,7 @@ describe ::Process, "integrating with real processes" do
       let(:pid) { ::Process.spawn("irb") }
 
       it "should kill the process" do
-        ::Process.kill_tree(pid)
+        ::Process.kill_tree(9, pid)
 
         wait_until_killed([pid])
       end
@@ -29,7 +29,7 @@ describe ::Process, "integrating with real processes" do
       it "should kill all processes in the tree" do
         tree_pids = ::Sys::ProcTree::Tree.find(ppid)
 
-        ::Process.kill_tree(ppid)
+        ::Process.kill_tree(9, ppid)
 
         wait_until_killed(tree_pids)
       end

@@ -6,6 +6,7 @@ describe ::Sys::ProcTree::Process do
 
   describe "#kill_tree" do
 
+    let(:kill_signal) { 7 }
     let(:tree_pids) { [2, 6, 8] }
 
     before(:each) do
@@ -17,20 +18,20 @@ describe ::Sys::ProcTree::Process do
     it "should discover the pids of the process tree" do
       ::Sys::ProcTree::Tree.should_receive(:find).with(8).and_return(tree_pids)
 
-      TestableProcess.kill_tree(8)
+      TestableProcess.kill_tree(kill_signal, 8)
     end
 
-    it "should attempt to kill each process with a SIGKILL signal in tree order" do
-      tree_pids.each { |pid| ::Process.should_receive(:kill).with(9, pid) }
+    it "should attempt to kill each process with the provided kill signal in tree order" do
+      tree_pids.each { |pid| ::Process.should_receive(:kill).with(kill_signal, pid) }
 
-      TestableProcess.kill_tree(8)
+      TestableProcess.kill_tree(kill_signal, 8)
     end
 
 
     it "should wait for all processes to complete" do
       tree_pids.each { |pid| ::Process.should_receive(:wait).with(pid) }
 
-      TestableProcess.kill_tree(8)
+      TestableProcess.kill_tree(kill_signal, 8)
     end
 
     it "should return the exit status of all killed processes" do
@@ -38,17 +39,19 @@ describe ::Sys::ProcTree::Process do
         [pid, double(Process::Status)].tap { |result| ::Process.stub!(:wait).with(pid).and_return(result) }
       end
 
-      TestableProcess.kill_tree(8).should eql(wait_results)
+      TestableProcess.kill_tree(kill_signal, 8).should eql(wait_results)
     end
 
     describe "when a process has already been killed" do
 
-      before(:each) { ::Process.stub!(:kill).with(9, 6).and_raise("No such process") }
+      let(:kill_signal) { 9 }
+
+      before(:each) { ::Process.stub!(:kill).with(kill_signal, 6).and_raise("No such process") }
 
       it "should continue to kill subsequent processes" do
-        [2, 8].each { |pid| ::Process.should_receive(:kill).with(9, pid) }
+        [2, 8].each { |pid| ::Process.should_receive(:kill).with(kill_signal, pid) }
 
-        TestableProcess.kill_tree(8)
+        TestableProcess.kill_tree(kill_signal, 8)
       end
 
       it "should return an exit status of nil" do
@@ -56,7 +59,7 @@ describe ::Sys::ProcTree::Process do
         ::Process.stub!(:wait).with(2).and_return(wait_results[0])
         ::Process.stub!(:wait).with(8).and_return(wait_results[2])
 
-        TestableProcess.kill_tree(8).should eql(wait_results)
+        TestableProcess.kill_tree(kill_signal, 8).should eql(wait_results)
       end
 
     end
