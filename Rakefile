@@ -23,12 +23,15 @@ desc "Exercises specifications"
 ::RSpec::Core::RakeTask.new(:spec)
 
 desc "Exercises specifications with coverage analysis"
-task :coverage do
-  ENV['coverage'] = "enabled"
-  Rake::Task[:spec].invoke
-end
+task :coverage => "coverage:generate"
 
 namespace :coverage do
+
+  desc "Generates specification coverage results"
+  task :generate do
+    ENV['coverage'] = "enabled"
+    Rake::Task[:spec].invoke
+  end
 
   desc "Shows specification coverage results in browser"
   task :show do
