@@ -1,4 +1,8 @@
-require 'cover_me'
+require 'simplecov'
+SimpleCov.start do
+  minimum_coverage 100
+  refuse_coverage_drop
+end if ENV['coverage']
 
 require_relative "../lib/sys/proctree"
 Bundler.require(:test)
