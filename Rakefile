@@ -29,7 +29,7 @@ namespace :coverage do
 
   desc "Generates specification coverage results"
   task :generate do
-    ENV['coverage'] = "enabled"
+    ENV["coverage"] = "enabled"
     Rake::Task[:spec].invoke
   end
 
