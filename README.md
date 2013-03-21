@@ -24,4 +24,9 @@ Uses sys-proctable to discover process trees.  See sys-proctable for supported o
 Requirements
 ------------
 
-* Ruby 1.9.3
+* Ruby 1.9
+
+Build Status
+------------
+
+[![Build Status](https://travis-ci.org/MYOB-Technology/sys-proctree.png)](https://travis-ci.org/MYOB-Technology/sys-proctree)
