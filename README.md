@@ -6,8 +6,8 @@ Discovers and lays waste to process trees on various operating systems.
 Status
 ------
 
-[![Gem Version](https://badge.fury.io/rb/sys-proctree.png)](http://badge.fury.io/rb/sys-proctree)
 [![Build Status](https://travis-ci.org/MYOB-Technology/sys-proctree.png)](https://travis-ci.org/MYOB-Technology/sys-proctree)
+[![Gem Version](https://badge.fury.io/rb/sys-proctree.png)](http://badge.fury.io/rb/sys-proctree)
 
 Guide
 -----
