@@ -1,6 +1,6 @@
 describe ::Sys::ProcTree::ProcessStatusList do
 
-  before(:each) { ::Sys::ProcTable.stub!(:ps).and_return(proc_list) }
+  before(:each) { ::Sys::ProcTable.stub(:ps).and_return(proc_list) }
 
   let(:proc_list) do
     [double("ProcTableStruct", pid: 1, ppid: 2),

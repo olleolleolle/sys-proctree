@@ -21,7 +21,7 @@ describe ::Sys::ProcTree::Tree do
 
     describe "when the provided process exists" do
 
-      before(:each) { process_status_list.stub!(:exists?).with(pid).and_return(true) }
+      before(:each) { process_status_list.stub(:exists?).with(pid).and_return(true) }
 
       describe "when the tree is more than one level deep" do
 
@@ -51,7 +51,7 @@ describe ::Sys::ProcTree::Tree do
 
     describe "when the provided process does not exist" do
 
-      before(:each) { process_status_list.stub!(:exists?).and_return(false) }
+      before(:each) { process_status_list.stub(:exists?).and_return(false) }
 
       it "should return an empty array" do
         tree.find(0).should be_empty

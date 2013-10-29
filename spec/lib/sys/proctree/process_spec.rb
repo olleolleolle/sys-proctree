@@ -10,9 +10,9 @@ describe ::Sys::ProcTree::Process do
     let(:tree_pids) { [2, 6, 8] }
 
     before(:each) do
-      ::Sys::ProcTree::Tree.stub!(:find).and_return([2, 6, 8])
-      ::Process.stub!(:kill)
-      ::Process.stub!(:wait)
+      ::Sys::ProcTree::Tree.stub(:find).and_return([2, 6, 8])
+      ::Process.stub(:kill)
+      ::Process.stub(:wait)
     end
 
     it "should discover the pids of the process tree" do
@@ -36,7 +36,7 @@ describe ::Sys::ProcTree::Process do
 
     it "should return the exit status of all killed processes" do
       wait_results = tree_pids.map do |pid|
-        [pid, double(Process::Status)].tap { |result| ::Process.stub!(:wait).with(pid).and_return(result) }
+        [pid, double(Process::Status)].tap { |result| ::Process.stub(:wait).with(pid).and_return(result) }
       end
 
       TestableProcess.kill_tree(kill_signal, 8).should eql(wait_results)
@@ -46,7 +46,7 @@ describe ::Sys::ProcTree::Process do
 
       let(:kill_signal) { 9 }
 
-      before(:each) { ::Process.stub!(:kill).with(kill_signal, 6).and_raise("No such process") }
+      before(:each) { ::Process.stub(:kill).with(kill_signal, 6).and_raise("No such process") }
 
       it "should continue to kill subsequent processes" do
         [2, 8].each { |pid| ::Process.should_receive(:kill).with(kill_signal, pid) }
@@ -56,8 +56,8 @@ describe ::Sys::ProcTree::Process do
 
       it "should return an exit status of nil" do
         wait_results = [[2, double(Process::Status)], [6, nil], [8, double(Process::Status)]]
-        ::Process.stub!(:wait).with(2).and_return(wait_results[0])
-        ::Process.stub!(:wait).with(8).and_return(wait_results[2])
+        ::Process.stub(:wait).with(2).and_return(wait_results[0])
+        ::Process.stub(:wait).with(8).and_return(wait_results[2])
 
         TestableProcess.kill_tree(kill_signal, 8).should eql(wait_results)
       end

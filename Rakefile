@@ -1,9 +1,8 @@
 require 'bundler'
+require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 
 directory "pkg"
-
-Bundler::GemHelper.install_tasks
 
 desc "Removed generated artefacts"
 task :clobber do
@@ -14,9 +13,7 @@ end
 
 desc "Complexity analysis"
 task :metrics do
-  print " Complexity Metrics ".center(80, "*") + "\n"
-  print `find lib -name \\*.rb | xargs flog --continue`
-  print "*" * 80+ "\n"
+  print `metric_fu --no-open`
 end
 
 desc "Exercises specifications"
@@ -52,6 +49,6 @@ task :validate do
   raise "Travis CI validation failed" unless result =~ /^Hooray/
 end
 
-task :default => [:clobber, :metrics, :coverage]
+task :default => %w{ clobber metrics coverage }
 
-task :pre_commit => [:clobber, :metrics, "coverage:show", :validate]
+task :pre_commit => %w{ clobber metrics coverage:show validate }
