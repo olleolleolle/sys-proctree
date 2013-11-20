@@ -1,7 +1,3 @@
-require 'rubygems'
-require 'bundler'
-Bundler.setup(:default)
-
 require 'sys/proctable'
 
 require_relative "proctree/process_status_list"

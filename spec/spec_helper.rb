@@ -1,4 +1,6 @@
-require 'simplecov'
+require 'bundler'
+Bundler.require(:default, :development)
+
 SimpleCov.start do
   add_filter "/spec/"
   add_filter "/vendor/"
@@ -7,6 +9,5 @@ SimpleCov.start do
 end if ENV["coverage"]
 
 require_relative "../lib/sys/proctree"
-Bundler.require(:development)
 
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |file| require file }
