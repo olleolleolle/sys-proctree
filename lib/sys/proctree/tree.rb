@@ -6,7 +6,7 @@ module Sys
       class << self
 
         def find(pid)
-          ::Sys::ProcTree::Tree.new(pid).pids
+          self.new(pid).pids
         end
 
       end

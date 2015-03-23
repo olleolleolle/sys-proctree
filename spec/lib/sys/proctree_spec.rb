@@ -2,10 +2,10 @@ describe ::Sys::ProcTree do
 
   describe "#find" do
 
-    it "should find a tree via a Sys::ProcTree::Tree" do
-      ::Sys::ProcTree::Tree.should_receive(:find).with(7).and_return([1, 3, 7])
+    it "finds a tree via a Sys::ProcTree::Tree" do
+      allow(::Sys::ProcTree::Tree).to receive(:find).with(7).and_return([1, 3, 7])
 
-      ::Sys::ProcTree.find(7).should eql([1, 3, 7])
+      expect(::Sys::ProcTree.find(7)).to eql([1, 3, 7])
     end
 
   end

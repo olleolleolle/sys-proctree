@@ -5,12 +5,12 @@ module Sys
 
       def kill_tree(signal, pid)
         pids = ::Sys::ProcTree::Tree.find(pid)
-        pids.collect do |pid|
+        pids.map do |pid|
           begin
             ::Process.kill(signal, pid)
             ::Process.wait(pid)
           rescue
-            [pid, nil]
+            [ pid, nil ]
           end
         end
       end

@@ -1,7 +1,7 @@
 describe ::Process do
 
-  it "should have the capability to kill a process tree" do
-    ::Process.should be_a(::Sys::ProcTree::Process)
+  it "has the ability to kill a process tree" do
+    expect(::Process).to be_a(::Sys::ProcTree::Process)
   end
 
 end
