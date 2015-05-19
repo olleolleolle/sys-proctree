@@ -31,4 +31,4 @@ Uses sys-proctable to discover process trees.  See sys-proctable for supported o
 Requirements
 ------------
 
-* Ruby 1.9.3, 2.0 or 2.1
+* Ruby >= 1.9.3

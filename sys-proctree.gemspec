@@ -20,12 +20,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.9.3"
 
-  s.add_dependency "sys-proctable", ">= 0.9.0", "<= 0.9.4"
+  s.add_dependency "sys-proctable", ">= 0.9.8"
 
   s.add_development_dependency "travis-lint", "~> 2.0"
   s.add_development_dependency "metric_fu", "~> 4.11"
   s.add_development_dependency "rspec", "~> 3.2"
   s.add_development_dependency "os", "~> 0.9"
   s.add_development_dependency "rake", "~> 10.4"
-  s.add_development_dependency "simplecov", "~> 0.9"
+  s.add_development_dependency "simplecov", "~> 0.10"
 end
