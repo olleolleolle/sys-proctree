@@ -23,9 +23,8 @@ Gem::Specification.new do |s|
   s.add_dependency "sys-proctable", ">= 0.9.8"
 
   s.add_development_dependency "travis-lint", "~> 2.0"
-  s.add_development_dependency "metric_fu", "~> 4.11"
-  s.add_development_dependency "rspec", "~> 3.2"
-  s.add_development_dependency "os", "~> 0.9"
-  s.add_development_dependency "rake", "~> 10.4"
-  s.add_development_dependency "simplecov", "~> 0.10"
+  s.add_development_dependency "rspec",       "~> 3.4"
+  s.add_development_dependency "os",          "~> 0.9"
+  s.add_development_dependency "rake",        "~> 11.1"
+  s.add_development_dependency "simplecov",   "~> 0.11"
 end
