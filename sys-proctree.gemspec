@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files   = Dir.glob("./spec/**/*")
   s.require_path = "lib"
 
-  s.required_ruby_version = ">= 1.9.3"
+  s.required_ruby_version = ">= 2.0"
 
   s.add_dependency "sys-proctable", "1.0.0"
 
