@@ -2,30 +2,30 @@
 $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "sys/proctree/version"
 
-Gem::Specification.new do |s|
-  s.name = "sys-proctree"
-  s.version = ::Sys::ProcTree::VERSION
-  s.platform = Gem::Platform::RUBY
-  s.authors = [ "Matthew Ueckerman" ]
-  s.summary = "Discovers and can attempt to lay waste to a process tree"
-  s.description = "Discovers and kills process trees via analysing running process lists"
-  s.email = "matthew.ueckerman@myob.com"
-  s.homepage = "http://github.com/MYOB-Technology/sys-proctree"
-  s.rubyforge_project = "sys-proctree"
-  s.license = "MIT"
+Gem::Specification.new do |spec|
+  spec.name = "sys-proctree"
+  spec.version = ::Sys::ProcTree::VERSION
+  spec.platform = Gem::Platform::RUBY
+  spec.authors = [ "Matthew Ueckerman" ]
+  spec.summary = "Discovers and can attempt to lay waste to a process tree"
+  spec.description = "Discovers and kills process trees via analysing running process lists"
+  spec.email = "matthew.ueckerman@myob.com"
+  spec.homepage = "http://github.com/MYOB-Technology/sys-proctree"
+  spec.rubyforge_project = "sys-proctree"
+  spec.license = "MIT"
 
-  s.files        = Dir.glob("./lib/**/*")
-  s.test_files   = Dir.glob("./spec/**/*")
-  s.require_path = "lib"
+  spec.files        = Dir.glob("./lib/**/*")
+  spec.test_files   = Dir.glob("./spec/**/*")
+  spec.require_path = "lib"
 
-  s.required_ruby_version = ">= 2.0"
+  spec.required_ruby_version = ">= 2.0"
 
-  s.add_dependency "sys-proctable", "1.0.0"
+  spec.add_dependency "sys-proctable", "1.0.0"
 
-  s.add_development_dependency "rubocop",     "~> 0.41"
-  s.add_development_dependency "rspec",       "~> 3.5"
-  s.add_development_dependency "os",          "~> 0.9"
-  s.add_development_dependency "rake",        "~> 11.2"
-  s.add_development_dependency "simplecov",   "~> 0.12"
-  s.add_development_dependency "travis-lint", "~> 2.0"
+  spec.add_development_dependency "rubocop",     "~> 0.41"
+  spec.add_development_dependency "rspec",       "~> 3.5"
+  spec.add_development_dependency "os",          "~> 0.9"
+  spec.add_development_dependency "rake",        "~> 11.2"
+  spec.add_development_dependency "simplecov",   "~> 0.12"
+  spec.add_development_dependency "travis-lint", "~> 2.0"
 end
