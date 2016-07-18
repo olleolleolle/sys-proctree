@@ -1,15 +1,14 @@
 language: ruby
 rvm:
-- 1.9.3
-- 2.0
-- 2.1
-- 2.2
+  - 1.9.3
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3.1
 before_install:
-- gem install bundler
+  - gem install bundler
+cache: bundler
 notifications:
   email:
     on_success: change
     on_failure: always
-  hipchat:
-    rooms:
-      secure: pGyEX9nDFE88RrgOl/rPKXtQDIiA+57ukkR0hCOOb2XI2AzFrRyBsgV/UUHHt0G6mdsyMt5OFxrZuYpZlCaLUt0YmwiOfsFRaKYiJ5zpE8rMcalOx5NNYMrnAYDNVyV1flPgI/vQW6yXB9SG7t756LLcK0JA/C81q51G/pnZG9k=

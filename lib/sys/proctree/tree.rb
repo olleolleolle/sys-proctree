@@ -3,12 +3,8 @@ module Sys
 
     class Tree
 
-      class << self
-
-        def find(pid)
-          self.new(pid).pids
-        end
-
+      def self.find(pid)
+        self.new(pid).pids
       end
 
       def initialize(pid)
