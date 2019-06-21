@@ -10,11 +10,11 @@ describe ::Sys::ProcTree::ProcessStatusList do
 
   let(:list) { ::Sys::ProcTree::ProcessStatusList.new }
 
-  it "should be an array" do
+  it "is an array" do
     expect(list).to be_an(Array)
   end
 
-  it "should contain proc table process status results" do
+  it "contains proc table process status results" do
     expect(::Sys::ProcTable).to receive(:ps).and_return(proc_list)
 
     expect(list).to eql(proc_list)
@@ -26,7 +26,7 @@ describe ::Sys::ProcTree::ProcessStatusList do
 
       let(:pid) { 2 }
 
-      it "should return true" do
+      it "returns true" do
         expect(list.exists?(pid)).to be(true)
       end
 
@@ -36,7 +36,7 @@ describe ::Sys::ProcTree::ProcessStatusList do
 
       let(:pid) { -1 }
 
-      it "should return false" do
+      it "returns false" do
         expect(list.exists?(pid)).to be(false)
       end
 

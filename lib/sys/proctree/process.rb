@@ -9,7 +9,7 @@ module Sys
           begin
             ::Process.kill(signal, pid_in_tree)
             ::Process.wait(pid_in_tree)
-          rescue
+          rescue StandardError
             [ pid_in_tree, nil ]
           end
         end
