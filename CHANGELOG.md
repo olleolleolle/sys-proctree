@@ -1,7 +1,7 @@
 ** 0.0.11 **
 
 Breaking:
-* Dropped Ruby <= 2.2 support (encouraged by Bundler)
+* Dropped <= Ruby 2.2 support (official language supported has ended)
 
 Misc:
 * Dependency update

@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.name = "sys-proctree"
   spec.version = ::Sys::ProcTree::VERSION
   spec.platform = Gem::Platform::RUBY
-  spec.authors = [ "Matthew Ueckerman" ]
+  spec.authors = %w{ dueckes }
   spec.summary = "Discovers and can attempt to lay waste to a process tree"
   spec.description = "Discovers and kills process trees via analysing running process lists"
   spec.email = "matthew.ueckerman@myob.com"
@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.files        = Dir.glob("./lib/**/*")
   spec.test_files   = Dir.glob("./spec/**/*")
+
   spec.require_path = "lib"
 
   spec.required_ruby_version = ">= 2.3"
