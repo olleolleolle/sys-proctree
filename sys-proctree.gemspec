@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec",       "~> 3.8"
   spec.add_development_dependency "os",          "~> 0.9"
   spec.add_development_dependency "irb",         "~> 1.0"
-  spec.add_development_dependency "simplecov",   "~> 0.13.0"
+  spec.add_development_dependency "simplecov",   "~> 0.16"
   spec.add_development_dependency "travis-lint", "~> 2.0"
 end
