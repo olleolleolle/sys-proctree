@@ -8,6 +8,8 @@ Status
 
 [![Build Status](https://travis-ci.org/MYOB-Technology/sys-proctree.png)](https://travis-ci.org/MYOB-Technology/sys-proctree)
 [![Gem Version](https://badge.fury.io/rb/sys-proctree.png)](http://badge.fury.io/rb/sys-proctree)
+[![Code Climate](https://codeclimate.com/github/MYOB-Technology/sys-proctree/badges/gpa.svg)](https://codeclimate.com/github/MYOB-Technology/sys-proctree)
+[![Test Coverage](https://codeclimate.com/github/MYOB-Technology/sys-proctree/badges/coverage.svg)](https://codeclimate.com/github/MYOB-Technology/sys-proctree/coverage)
 
 Guide
 -----
