@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.description = "Discovers and kills process trees via analysing running process lists"
   spec.email = "matthew.ueckerman@myob.com"
   spec.homepage = "http://github.com/MYOB-Technology/sys-proctree"
-  spec.rubyforge_project = "sys-proctree"
   spec.license = "MIT"
 
   spec.files        = Dir.glob("./lib/**/*")
